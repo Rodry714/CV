@@ -16,7 +16,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+Route::get('/' , function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -33,13 +33,9 @@ Route::get('/recipes',function (){
     return Inertia::render('Recipes');
 });
 
-Route::get('/login',function (){
-    return Inertia::render('login');
-})->middleware(['auth','verified'])->name('login');
-
-Route::get('/recipes',function (){
-    return Inertia::render('');
-});
+Route::get('/subscription',function (){
+    return Inertia::render('Subscription');
+})->name('subscription');
 
 
 
