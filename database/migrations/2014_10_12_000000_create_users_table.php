@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Plan;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,13 +16,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-            $table->integer('age');
-            $table->string('profession');
+            $table->foreignIdFor(Plan::class)->constrained();
             $table->string('email')->unique();
-            $table->integer('cellphone');
+            $table->string('cellphone');
             $table->string('nickname');
             $table->string('password');
             $table->rememberToken();
+            $table->timestamps();
         });
     }
 
