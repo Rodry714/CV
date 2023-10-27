@@ -16,18 +16,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/welcome' , function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/' , function () {
+    return Inertia::render('Welcome');
+})->name('welcome');
 
 Route::get('/recipes',function (){
     return Inertia::render('Recipes');
@@ -41,14 +32,9 @@ Route::get('routines', function () {
     //
 })->name('routines');
 
-Route::get('signup', function() {
-    //
-})->name('signup');
-
 Route::get('/subscription',function (){
     return Inertia::render('Subscription');
 })->name('subscription');
-
 
 
 Route::middleware('auth')->group(function () {
