@@ -21,16 +21,23 @@ const showingNavigationDropdown = ref(false);
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
                                     <img
-                                        class="block h-9 w-auto fill-current text-gray-800"
+                                        class="h-9 w-auto fill-current text-gray-800"
                                         src='../../img/HackerRank-js.png'
                                         />
                                 </Link>
+                                    <span class="ml-2 uppercase text-xl font-extrabold">Easy meals</span>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+                            </div>
+
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink :href="route('recipes')" :active="route().current('recipes')">
+                                    Recipes
                                 </NavLink>
                             </div>
                         </div>
@@ -45,7 +52,7 @@ const showingNavigationDropdown = ref(false);
                                                 type="button"
                                                 class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {{ $page.props.auth.user.name }}
+                                                {{ $page.props.auth.user.nickname }}
 
                                                 <svg
                                                     class="ml-2 -mr-0.5 h-4 w-4"

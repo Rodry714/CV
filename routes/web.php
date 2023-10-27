@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/recipes',function (){
     return Inertia::render('Recipes');
-});
+})->middleware(['auth', 'verified'])->name('recipes');;
 
 Route::get('/subscription',function (){
     return Inertia::render('Subscription');
