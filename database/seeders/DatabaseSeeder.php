@@ -23,14 +23,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::factory()->create([
-            'name' => 'Single Orange',
+            'firstname' => 'Single Orange',
             'email' => 'single@orange.com',
             'plan_id' => '1',
             'nickname' => 'half-orangi',
         ]);
 
         \App\Models\User::factory()->create([
-            'name' => 'Doctor Orange',
+            'firstname' => 'Doctor Orange',
             'email' => 'doctor@orange.com',
             'plan_id' => '2',
             'nickname' => 'doc-citric',
