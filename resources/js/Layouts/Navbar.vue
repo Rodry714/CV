@@ -21,10 +21,9 @@ const showingNavigationDropdown = ref(false);
                                 <Link :href="route('dashboard')">
                                     <img
                                         class="h-9 w-auto fill-current text-gray-800"
-                                        src='../../img/Logos/logo.png'
+                                        src='../../img/Logos/Easy-Meals.png'
                                         />
                                 </Link>
-                                    <span class="ml-2 uppercase text-xl font-extrabold">Easy meals</span>
                             </div>
 
                             <!-- Navigation Links -->
