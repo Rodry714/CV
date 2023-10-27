@@ -31,7 +31,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/recipes',function (){
     return Inertia::render('Recipes');
-})->middleware(['auth', 'verified'])->name('recipes');;
+})->middleware(['auth', 'verified'])->name('recipes');
+
+Route::get('/recipe/{recipe}',function (){
+    return Inertia::render('RecipeDetails');
+})->middleware(['auth', 'verified'])->name('recipe');;
 
 Route::get('routines', function () {
     //

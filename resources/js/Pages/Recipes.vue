@@ -3,7 +3,7 @@ import ls from 'localstorage-slim';
 import spoonacularAPI from "@/Utils/spoonacularAPI.js";
 import {onMounted, ref} from "vue";
 import RecipeCard from "@/Components/RecipeCard.vue";
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import Layout from "@/Layouts/Layout.vue";
 import {Head} from "@inertiajs/vue3";
 
 
@@ -28,7 +28,7 @@ onMounted(fetchData)
 
 <template>
     <Head title="Recipes"/>
-    <AuthenticatedLayout>
+    <Layout>
         <div class="container max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5 mx-5">
                 <RecipeCard v-for="recipe in data?.recipes"
@@ -36,5 +36,5 @@ onMounted(fetchData)
                 </RecipeCard>
             </div>
         </div>
-    </AuthenticatedLayout>
+    </Layout>
 </template>

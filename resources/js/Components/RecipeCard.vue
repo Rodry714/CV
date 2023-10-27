@@ -1,5 +1,7 @@
 <script setup>
 
+import { Link } from "@inertiajs/vue3";
+
 const props = defineProps({
     recipe: Object
 })
@@ -8,12 +10,12 @@ const props = defineProps({
 
 <template>
 
-    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto">
+    <div class="flex flex-col w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto">
         <a href="#">
-            <img class="p-8 rounded-t-lg" :src="recipe.image" alt="recipe image"/>
+            <img class="rounded-t-lg" :src="recipe.image" alt="recipe image"/>
         </a>
 
-        <div class="flex flex-col px-5 pb-5">
+        <div class="flex flex-col h-full justify-between px-5 py-5">
             <a href="#">
                 <h5 class="text-xl font-semibold tracking-tight text-gray-900">{{ recipe.title }}</h5>
             </a>
@@ -29,9 +31,12 @@ const props = defineProps({
                 </p>
             </div>
 
-            <div class="flex items-center justify-between self-end">
+            <div class="flex items-center justify-between w-full">
                 <span class=" font-bold text-gray-600">Servings {{ recipe.servings }}</span>
-                <a href="#"
+                <Link :href="'XD'">
+                    A
+                </Link>
+                <a href="d"
                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Cook
                     it!</a>
             </div>
