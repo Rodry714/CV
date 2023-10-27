@@ -25,7 +25,7 @@ const props = defineProps({
                 <p class="text-sm text-gray-600">{{ recipe.creditsText }}</p>
 
                 <p>Ready in
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold mx-1 px-2.5 py-0.5 rounded">{{
+                    <span class="bg-green-500/25 text-[#228b12] text-xs font-semibold mx-1 px-2.5 py-0.5 rounded">{{
                             recipe.readyInMinutes
                         }}</span>
                     minutes
