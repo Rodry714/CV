@@ -70,6 +70,7 @@ const submit = () => {
                     required
                     autocomplete="new-password"
                 />
+
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
@@ -89,8 +90,25 @@ const submit = () => {
             </div>
 
             <!--Seccion de registro-->
+            <!--
+            <div class="flex items-center justify-end mt-4">
+                <Link
+                    :href="route('login')"
+                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                    Already registered?
+                </Link>
 
+                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Register
+                </PrimaryButton>
+            </div>
+            -->
+
+        </form>
+    </GuestLayout>
 <div class="padre" style="display: flex;">
+    <div style="padding: 0 10px 10px 10px;">
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
         <h5 class="mb-4 text-xl font-medium text-gray-500 ">Single Orange</h5>
         <div class="flex items-baseline text-gray-900 ">
@@ -180,7 +198,9 @@ const submit = () => {
         </ul>
         <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
     </div>
+</div>
 
+<div style="padding: 0 10px 10px 0;">
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
         <h5 class="mb-4 text-xl font-medium text-gray-500 ">Single Orange Premium</h5>
         <div class="flex items-baseline text-gray-900 ">
@@ -270,7 +290,9 @@ const submit = () => {
         </ul>
         <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
     </div>
+</div>
 
+<div style="padding: 0 10px 10px 0;">
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
         <h5 class="mb-4 text-xl font-medium text-gray-500 ">Dr Orange Pro</h5>
         <div class="flex items-baseline text-gray-900 ">
@@ -360,7 +382,9 @@ const submit = () => {
         </ul>
         <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
     </div>
+</div>
 
+<div class="cuarto-sub">
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
         <h5 class="mb-4 text-xl font-medium text-gray-500 ">Dr Orange Premium</h5>
         <div class="flex items-baseline text-gray-900 ">
@@ -451,22 +475,12 @@ const submit = () => {
         <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
     </div>
 </div>
-<div class="flex items-center justify-end mt-4">
-                <Link
-                    :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Already registered?
-                </Link>
-
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
-            </div>
-        </form>
-    </GuestLayout>
 </div>
-
+</div>
 </template>
+
+<style scoped>
+
+</style>
 
 
