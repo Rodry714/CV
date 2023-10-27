@@ -7,13 +7,18 @@ import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
-    name: '',
+    firstname: '',
+    lastname: '',
+    nickname: '',
+    cellphone: '',
+    plan_id:'',
     email: '',
     password: '',
     password_confirmation: '',
 });
 
-const submit = () => {
+const submit = (number) => {
+    form.plan_id = number;
     form.post(route('register'), {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
@@ -29,64 +34,46 @@ const submit = () => {
         <Head title="Register" />
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel value="First Name" />
+                <TextInput type="text" v-model="form.firstname" required/>
 
-                <TextInput
-                    id="name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.name"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
-
-                <InputError class="mt-2" :message="form.errors.name" />
+                <InputError :message="form.errors.firstname" />
             </div>
+            <div class="mt-2">
+                <InputLabel value="Last Name" />
+                <TextInput type="text" v-model="form.lastname" required/>
 
-            <div class="mt-4">
+                <InputError :message="form.errors.lastname" />
+            </div>
+            <div class="mt-2">
+                <InputLabel value="Nickname" />
+                <TextInput type="text" v-model="form.nickname" required/>
+
+                <InputError :message="form.errors.nickname" />
+            </div>
+            <div class="mt-2">
+                <InputLabel value="Cellphone" />
+                <TextInput type="number" v-model="form.cellphone" required/>
+
+                <InputError :message="form.errors.cellphone" />
+            </div>
+            <div class="mt-2">
                 <InputLabel for="email" value="Email" />
+                <TextInput type="email" v-model="form.email" required/>
 
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autocomplete="username"
-                />
-
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputError :message="form.errors.email" />
             </div>
-
-            <div class="mt-4">
+            <div class="mt-2">
                 <InputLabel for="password" value="Password" />
+                <TextInput type="password" v-model="form.password" required/>
 
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password" />
+                <InputError :message="form.errors.password" />
             </div>
-
-            <div class="mt-4">
+            <div class="mt-2">
                 <InputLabel for="password_confirmation" value="Confirm Password" />
+                <TextInput type="password" v-model="form.password_confirmation" required/>
 
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                <InputError :message="form.errors.password_confirmation" />
             </div>
 
             <!--Seccion de registro-->
@@ -196,7 +183,10 @@ const submit = () => {
                 <span class="text-base font-normal leading-tight text-gray-500">Free 15 days trial</span>
             </li>
         </ul>
-        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
+        <button type="button" @click="() => submit(1)" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">
+            Choose plan
+        </button>
+
     </div>
 </div>
 
@@ -288,7 +278,9 @@ const submit = () => {
                 <span class="text-base font-normal leading-tight text-gray-500">Free 15 days trial</span>
             </li>
         </ul>
-        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
+        <button type="button" @click="() => submit(2)"  class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">
+            Choose plan
+        </button>
     </div>
 </div>
 
@@ -380,7 +372,9 @@ const submit = () => {
                 <span class="text-base font-normal leading-tight text-gray-500">Free 15 days trial</span>
             </li>
         </ul>
-        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
+        <button type="button" @click="() => submit(3)" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">
+            Choose plan
+        </button>
     </div>
 </div>
 
@@ -472,7 +466,9 @@ const submit = () => {
                 <span class="text-base font-normal leading-tight text-blue-600">Free 15 days trial</span>
             </li>
         </ul>
-        <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Choose plan</button>
+        <button type="button" @click="() => submit(4)" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">
+            Choose plan
+        </button>
     </div>
 </div>
 </div>
@@ -484,3 +480,4 @@ const submit = () => {
 </style>
 
 
+ 

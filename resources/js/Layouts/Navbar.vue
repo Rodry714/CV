@@ -39,13 +39,13 @@ const showingNavigationDropdown = ref(false);
                                 </NavLink>
                             </div>
 
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" v-if="!$page.props.auth.user">
                                 <NavLink :href="route('login')" :active="route().current('login')">
                                     Login
                                 </NavLink>
                             </div>
 
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" v-if="!$page.props.auth.user">
                                 <NavLink :href="route('register')" :active="route().current('register')">
                                     Sign Up
                                 </NavLink>
@@ -139,12 +139,12 @@ const showingNavigationDropdown = ref(false);
                         </ResponsiveNavLink>
                     </div>
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('login')" :active="route().current('login')">
+                        <ResponsiveNavLink :href="route('login')" :active="route().current('login')" v-if="!$page.props.auth.user">
                             Login
                         </ResponsiveNavLink>
                     </div>
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('register')" :active="route().current('register')">
+                        <ResponsiveNavLink :href="route('register')" :active="route().current('register')" v-if="!$page.props.auth.user">
                             Sign Up
                         </ResponsiveNavLink>
                     </div>
