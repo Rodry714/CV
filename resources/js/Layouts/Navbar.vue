@@ -18,7 +18,7 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link :href="route('welcome')">
                                     <img
                                         class="h-9 w-auto fill-current text-gray-800"
                                         src='../../img/Logos/logo.png'
@@ -47,7 +47,7 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('signup')" :active="route().current('signup')">
+                                <NavLink :href="route('register')" :active="route().current('register')">
                                     Sign Up
                                 </NavLink>
                             </div>
@@ -130,8 +130,23 @@ const showingNavigationDropdown = ref(false);
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                        <ResponsiveNavLink :href="route('recipes')" :active="route().current('recipes')">
+                            Recipes
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('routines')" :active="route().current('routines')">
+                            Routines
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('login')" :active="route().current('login')">
+                            Login
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('register')" :active="route().current('register')">
+                            Sign Up
                         </ResponsiveNavLink>
                     </div>
 
