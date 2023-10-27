@@ -33,6 +33,14 @@ Route::get('/recipes',function (){
     return Inertia::render('Recipes');
 })->middleware(['auth', 'verified'])->name('recipes');;
 
+Route::get('routines', function () {
+    //
+})->name('routines');
+
+Route::get('signup', function() {
+    //
+})->name('signup');
+
 Route::get('/subscription',function (){
     return Inertia::render('Subscription');
 })->name('subscription');
