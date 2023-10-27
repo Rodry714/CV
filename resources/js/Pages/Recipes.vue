@@ -6,7 +6,8 @@ import RecipeCard from "@/Components/RecipeCard.vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import {Head} from "@inertiajs/vue3";
 
-const data = ref(ls.get('recipes'));
+
+const data = ref(ls.get('recipes') );
 
 async function fetchData() {
     if (data.value != null) return;
@@ -30,7 +31,7 @@ onMounted(fetchData)
     <AuthenticatedLayout>
         <div class="container max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5 mx-5">
-                <RecipeCard v-for="recipe in data.recipes"
+                <RecipeCard v-for="recipe in data?.recipes"
                             :recipe="recipe">
                 </RecipeCard>
             </div>

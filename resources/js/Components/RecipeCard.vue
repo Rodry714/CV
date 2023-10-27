@@ -13,7 +13,7 @@ const props = defineProps({
             <img class="p-8 rounded-t-lg" :src="recipe.image" alt="recipe image"/>
         </a>
 
-        <div class="px-5 pb-5">
+        <div class="flex flex-col px-5 pb-5">
             <a href="#">
                 <h5 class="text-xl font-semibold tracking-tight text-gray-900">{{ recipe.title }}</h5>
             </a>
@@ -29,7 +29,7 @@ const props = defineProps({
                 </p>
             </div>
 
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between self-end">
                 <span class=" font-bold text-gray-600">Servings {{ recipe.servings }}</span>
                 <a href="#"
                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Cook
