@@ -33,7 +33,7 @@ const submit = () => {
     <GuestLayout>
         <Head title="Log in" />
         <div style="width: 300px;padding-left: 100px;">
-            <img src="../../../img/Logos/logo.png">
+            <img src="../../../img/Logos/Easy-Meals_actualizado.png">
         </div>
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}

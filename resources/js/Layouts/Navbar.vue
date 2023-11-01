@@ -21,7 +21,7 @@ const showingNavigationDropdown = ref(false);
                                 <Link :href="route('welcome')">
                                     <img
                                         class="h-9 w-auto fill-current text-gray-800"
-                                        src='../../img/Logos/Easy-Meals.png'
+                                        src='../../img/Logos/Easy-Meals_actualizado.png'
                                         />
                                 </Link>
                             </div>
