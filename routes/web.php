@@ -32,9 +32,14 @@ Route::get('routines', function () {
     //
 })->name('routines');
 
+Route::get('credit', function () {
+    return Inertia::render('Credit');
+});
+
 Route::get('/subscription',function (){
     return Inertia::render('Subscription');
 })->name('subscription');
+
 
 
 Route::middleware('auth')->group(function () {
