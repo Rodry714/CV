@@ -11,17 +11,17 @@
             <div class="profile-info">
                 <h3>Personal profile</h3>
                 <form>
-                    <label for="name">Nombre</label><br>
+                    <label for="name">Name</label><br>
                     <input type="text" id="name" name="name" required><br><br>
-                    <label for="name">Apellido</label><br>
+                    <label for="name">Lastname</label><br>
                     <input type="text" id="name" name="name" required><br><br>
-                    <label for="edad">Edad</label><br>
+                    <label for="edad">Age</label><br>
                     <input type="text" id="name" name="edad" required><br><br>
-                    <label for="email">Correo Electrónico</label><br>
+                    <label for="email">E-mail</label><br>
                     <input type="email" id="email" name="email" required><br><br>
-                    <label for="phone">Número de Teléfono</label><br>
+                    <label for="phone">Cellphone</label><br>
                     <input type="text" id="phone" name="phone" required><br><br>
-                    <label for="nickname">Nikname</label><br>
+                    <label for="nickname">Nickname</label><br>
                     <input type="text" id="nickname" name="nickname" required><br><br>
                     <button class="button" onclick="saveProfile()" style="display: block; margin: 0 auto;">Save
                         Profile</button>
@@ -32,11 +32,11 @@
         </div>
         <div class="column">
             <h3 class="edit-experience">Profesional profile</h3>
-            <label for="direccion">Direccion</label><br>
+            <label for="direccion">Direction</label><br>
             <input type="text" id="direccion" name="direccion" required><br><br>
-            <label for="details">Titulo universitario</label><br>
+            <label for="details">University graduate</label><br>
             <input type="text" id="details" name="details" required><br><br>
-            <label for="details">Especializacion</label><br>
+            <label for="details">Specialization</label><br>
             <input type="text" id="details" name="details" required><br><br>
         </div>
 </div>
