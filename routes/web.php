@@ -28,9 +28,9 @@ Route::get('/recipe/{recipe}',function (){
     return Inertia::render('RecipeDetails');
 })->middleware(['auth', 'verified'])->name('recipe');;
 
-Route::get('routines', function () {
+Route::get('/routines', function () {
     return Inertia::render('Routines');
-});
+})->name('routines');
 
 Route::get('credit', function () {
     return Inertia::render('Credit');
