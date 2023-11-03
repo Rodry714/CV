@@ -13,7 +13,7 @@ async function fetchData() {
     if (data.value != null) return;
 
     const response = await spoonacularAPI.get('recipes/random', {
-        params: {number: 5}
+        params: {number: 3}
     });
 
     if (response.status == 200) {
@@ -30,8 +30,8 @@ onMounted(fetchData)
     <Head title="Recipes"/>
     <Layout>
         <div class="container max-w-5xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5 mx-5">
-                <RecipeCard v-for="recipe in data"
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3 mx-3">
+                <RecipeCard v-for="recipe in data?.recipes"
                             :recipe="recipe">
                 </RecipeCard>
             </div>
