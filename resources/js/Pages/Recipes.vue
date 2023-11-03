@@ -7,7 +7,7 @@ import Layout from "@/Layouts/Layout.vue";
 import {Head} from "@inertiajs/vue3";
 
 
-const data = ref(ls.get('recipes') );
+const data = ref(ls.get('recipes'));
 
 async function fetchData() {
     if (data.value != null) return;
@@ -17,7 +17,7 @@ async function fetchData() {
     });
 
     if (response.status == 200) {
-        data.value = await response.data;
+        data.value = await response.data.recipes;
         ls.set('recipes', data.value);
     }
 }
@@ -31,7 +31,7 @@ onMounted(fetchData)
     <Layout>
         <div class="container max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5 mx-5">
-                <RecipeCard v-for="recipe in data?.recipes"
+                <RecipeCard v-for="recipe in data"
                             :recipe="recipe">
                 </RecipeCard>
             </div>

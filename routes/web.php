@@ -24,8 +24,10 @@ Route::get('/recipes',function (){
     return Inertia::render('Recipes');
 })->middleware(['auth', 'verified'])->name('recipes');
 
-Route::get('/recipe/{recipe}',function (){
-    return Inertia::render('RecipeDetails');
+Route::get('/recipe/{recipe}',function ($recipe){
+    return Inertia::render('RecipeDetails', [
+        'recipeId' => $recipe
+    ]);
 })->middleware(['auth', 'verified'])->name('recipe');;
 
 Route::get('/routines', function () {
