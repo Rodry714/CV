@@ -93,7 +93,7 @@ onMounted(fetchData)
 
             </div>
 
-            <h1 class="text-4xl my-20 text-center font-bold">Let´s cook something
+            <h1 class="text-4xl my-20 text-center font-bold">Let's cook something
                 <span class="font-gluten font-medium text-5xl text-[#18ae5f]">
                 tasty!
                 </span>
