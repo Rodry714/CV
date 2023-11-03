@@ -29,8 +29,8 @@ Route::get('/recipe/{recipe}',function (){
 })->middleware(['auth', 'verified'])->name('recipe');;
 
 Route::get('routines', function () {
-    //
-})->name('routines');
+    return Inertia::render('Routines');
+});
 
 Route::get('credit', function () {
     return Inertia::render('Credit');
@@ -43,6 +43,11 @@ Route::get('/subscription',function (){
 Route::get('user', function () {
     return Inertia::render('User');
 });
+
+Route::get('/footer', function () {
+    return Inertia::render('Footer');
+});
+
 
 
 

@@ -95,7 +95,7 @@ const submit = (number) => {
         </form>
     </GuestLayout>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
-    <div class="px-5 py-1 ">
+    <div class="px-5 py-1">
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
         <h5 class="mb-4 text-xl font-medium text-gray-500 ">Single Orange</h5>
         <div class="flex items-baseline text-gray-900 ">

@@ -1,11 +1,12 @@
+<script setup>
+import Layout from '../Layouts/Layout.vue';
+</script>
+
 <template>
-    <div class="container">
-        <div class="column">
-            <div class="circle" onclick="document.getElementById('profile-image-upload').click()">
-                <img id="profile-image" src="default-image.jpg" class="profile-image">
-            </div>
-            <input type="file" id="profile-image-upload" accept="image/*" style="display: none;">
-            <div class="profile-details" style="display: none;"></div>
+    <Layout>
+    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="column grid grid-cols-1 place-items-center up">
+            <img src="../../img/Logos/userorange.png" class="w-16 md:w-32 lg:w-48">
         </div>
         <div class="column"> <!--Esto es de la columna del medio-->
             <div class="profile-info">
@@ -40,6 +41,7 @@
             <input type="text" id="details" name="details" required><br><br>
         </div>
 </div>
+</Layout>
 </template>
 
 <style scoped>
@@ -47,6 +49,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            background-color: #FFA244;
         }
 
         .column {
