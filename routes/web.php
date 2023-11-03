@@ -40,6 +40,10 @@ Route::get('/subscription',function (){
     return Inertia::render('Subscription');
 })->name('subscription');
 
+Route::get('user', function () {
+    return Inertia::render('User');
+});
+
 
 
 Route::middleware('auth')->group(function () {
