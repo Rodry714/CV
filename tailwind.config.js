@@ -14,6 +14,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                raleway: ['Raleway', ...defaultTheme.fontFamily.sans],
+                gluten: ['Gluten', ...defaultTheme.fontFamily.sans]
             },
         },
     },

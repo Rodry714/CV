@@ -27,13 +27,13 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" v-if="$page.props.auth.user">
                                 <NavLink :href="route('recipes')" :active="route().current('recipes')">
                                     Recipes
                                 </NavLink>
                             </div>
 
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" v-if="$page.props.auth.user">
                                 <NavLink :href="route('routines')" :active="route().current('routines')">
                                     Routines
                                 </NavLink>
