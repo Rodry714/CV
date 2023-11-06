@@ -30,14 +30,14 @@ onMounted(() => {
     const swiper = document.querySelector('swiper-container');
 })
 
-
+//Click derecho inspeccionar, more tab (flechitas cerca de Elements) -> Application -> Local Storage -> Select IP
 const data = ref(ls.get('recipesFree'));
 
 async function fetchData() {
     if (data.value != null) return;
 
     const response = await spoonacularAPI.get('recipes/random', {
-        params: {number: 6}
+        params: {number: 9}
     });
 
     if (response.status == 200) {
@@ -73,8 +73,8 @@ onMounted(fetchData)
                 us
             </h1>
 
-            <div class="grid grid-cols-1 gap-y-10 md:grid-cols-2 content-center">
-                <div class="text-5xl text-[#18ae5f] pl-1.5 font-gluten flex items-center">
+            <div class="grid grid-cols-1 gap-y-10 md:grid-cols-2 content-center px-5">
+                <div class="text-5xl text-[#18ae5f] pl-1.5 font-gluten items-center">
                     <h1>Mission</h1>
                 </div>
 
@@ -82,14 +82,15 @@ onMounted(fetchData)
                     <p>Promote good nutrition for the people of El Salvador through recipes and exercise routines to motivate them to change their habits through the Easy Meals platform.
                     </p>
                 </div>
+                <div class="text-5xl text-[#e8944e] pl-1.5 font-gluten items-center justify-end">
+                    <h1>Vision</h1>
+                </div>
                 <div class="text-justify">
                     <p>To be a primary source for those seeking inspiration and guidance on the path to a healthier and more physically active life. We want to be known as a trusted platform that offers healthy and delicious recipes, effective exercise routines and above all give the best experience to our community.
                     </p>
                 </div>
 
-                <div class="text-5xl text-[#e8944e] pl-1.5 font-gluten flex items-center justify-end">
-                    <h1>Vision</h1>
-                </div>
+
 
             </div>
 
