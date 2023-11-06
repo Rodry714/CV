@@ -36,7 +36,7 @@ const props = defineProps({
                 <span class=" font-bold text-gray-600">Servings {{ recipe.servings }}</span>
 
                 <PrimaryButton>
-                    <Link :href="'XD'">Cook
+                    <Link :href="route('recipe', {recipe: recipe.id})">Cook
                         it!
                     </Link>
                 </PrimaryButton>

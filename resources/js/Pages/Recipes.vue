@@ -7,7 +7,7 @@ import Layout from "@/Layouts/Layout.vue";
 import {Head} from "@inertiajs/vue3";
 
 
-const data = ref(ls.get('recipes') );
+const data = ref(ls.get('recipes'));
 
 async function fetchData() {
     if (data.value != null) return;
@@ -30,8 +30,16 @@ onMounted(fetchData)
     <Head title="Recipes"/>
     <Layout>
         <div class="container max-w-5xl mx-auto">
+            <h1 class="text-4xl my-20 text-center font-bold">
+                In for a
+                <span class="font-gluten font-medium text-5xl text-[#e8944e]">
+                treat?
+                </span>
+                Let's get cooking!
+            </h1>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3 mx-3">
-                <RecipeCard v-for="recipe in data?.recipes"
+                <RecipeCard v-for="recipe in data"
                             :recipe="recipe">
                 </RecipeCard>
             </div>
