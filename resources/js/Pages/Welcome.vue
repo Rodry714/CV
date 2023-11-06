@@ -56,13 +56,13 @@ onMounted(fetchData)
         <div class="block max-h-screen h-[calc(100vh-65px)]">
             <swiper-container autoplay-delay="3000" loop="true" navigation="true" speed="1000">
                 <swiper-slide>
-                    <img src="../../img/Carrousel/slide1.png"/>
+                    <img src="../../img/Carrousel/Imagen1.png"/>
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../../img/Carrousel/slide2.png"/>
+                    <img src="../../img/Carrousel/Imagen2.png"/>
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="../../img/Carrousel/slide3.png"/>
+                    <img src="../../img/Carrousel/Imagen3.png"/>
                 </swiper-slide>
             </swiper-container>
         </div>
