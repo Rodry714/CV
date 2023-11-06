@@ -5,7 +5,7 @@ import Layout from '../Layouts/Layout.vue';
 <template>
     <Layout>
     <div class="container max-w-5xl mx-auto">
-<div class="grid grid-cols-3 gap-3 place-items-centerz px-4 py-4">
+<div class="grid grid-cols-1  gap-2 md:grid-cols-2 lg:grid-cols-3 place-items-center px-4 py-4">
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
     <a href="#">
         <img class="rounded-t-lg" src="../../img/Routines/01.jpg" alt="product image" />
