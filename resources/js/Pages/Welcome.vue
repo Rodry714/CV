@@ -53,7 +53,7 @@ onMounted(fetchData)
 <template>
     <Head title="Welcome"/>
     <Layout>
-        <div class="block max-h-screen h-[calc(100vh-65px)]">
+        <div class="block max-h-screen h-auto md:h-[calc(100vh-65px)]">
             <swiper-container autoplay-delay="3000" loop="true" navigation="true" speed="1000">
                 <swiper-slide>
                     <img src="../../img/Carrousel/Imagen1.png"/>

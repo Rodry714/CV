@@ -17,7 +17,7 @@ async function fetchData() {
     });
 
     if (response.status == 200) {
-        data.value = await response.data;
+        data.value = await response.data.recipes;
         ls.set('recipes', data.value);
     }
 }
@@ -39,8 +39,7 @@ onMounted(fetchData)
             </h1>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3 mx-3">
-                <RecipeCard v-for="recipe in data"
-                            :recipe="recipe">
+                <RecipeCard v-for="recipe in data" :recipe="recipe">
                 </RecipeCard>
             </div>
         </div>
