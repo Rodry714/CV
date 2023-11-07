@@ -1,18 +1,32 @@
 <script setup>
-import {computed, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 import ls from "localstorage-slim";
 import Layout from "@/Layouts/Layout.vue";
+import spoonacularAPI from "@/Utils/spoonacularAPI.js";
 
-const props = defineProps({"recipeId": String})
+const props = defineProps({
+    recipeId: String,
+    daily: Boolean
+});
 
-const recipes = ref(ls.get('recipes') ?? {});
-
+const recipes = ref(ls.get('recipes2' + (props.daily ? 'Daily' : '')) ?? []);
 const currentRecipe = computed(() => recipes.value.find(r => r.id == props.recipeId));
+
+onMounted(async () => {
+    if (currentRecipe.value == null) {
+        const response = await spoonacularAPI.get(`recipes/${props.recipeId}/information`);
+
+        if (response.status == 200) {
+            recipes.value[Object.keys(recipes.value).length] = {daily: true, ...await response.data};
+            ls.set('recipes2' + (props.daily ? 'Daily' : ''), recipes.value);
+        }
+    }
+});
 </script>
 
 <template>
     <Layout>
-        <div class="mx-10 py-20">
+        <div class="mx-10 py-20" v-if="currentRecipe">
 
             <div class="flex justify-center">
                 <div
@@ -46,18 +60,20 @@ const currentRecipe = computed(() => recipes.value.find(r => r.id == props.recip
                 </li>
             </ul>
 
-            <h1 class="text-4xl mt-16 mb-8 font-medium font-gluten text-[#18ae5f]">
-                Preparation
-            </h1>
+            <div v-if="currentRecipe.analyzedInstructions?.length > 0">
+                <h1 class="text-4xl mt-16 mb-8 font-medium font-gluten text-[#18ae5f]">
+                    Preparation
+                </h1>
 
-            <ol v-for="instructions in currentRecipe.analyzedInstructions">
-                <li v-for="step in instructions.steps">
-                    <span class="font-gluten text-[#e8944e] text-xl">
-                        {{ step.number }}.
-                    </span>
-                    {{ step.step }}
-                </li>
-            </ol>
+                <ol v-for="instructions in currentRecipe.analyzedInstructions">
+                    <li v-for="step in instructions.steps">
+                        <span class="font-gluten text-[#e8944e] text-xl">
+                            {{ step.number }}.
+                        </span>
+                        {{ step.step }}
+                    </li>
+                </ol>
+            </div>
         </div>
     </Layout>
 </template>

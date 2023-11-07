@@ -26,7 +26,8 @@ Route::get('/recipes',function (){
 
 Route::get('/recipe/{recipe}',function ($recipe){
     return Inertia::render('RecipeDetails', [
-        'recipeId' => $recipe
+        'recipeId' => $recipe,
+        'daily' => request()->get('daily') == 1
     ]);
 })->middleware(['auth', 'verified'])->name('recipe');;
 
@@ -49,8 +50,7 @@ Route::get('user', function () {
 Route::get('/footer', function () {
     return Inertia::render('Footer');
 });
-
-
+Route::inertia('meal-plan', 'MealPlan')->name('meal-plan');
 
 
 Route::middleware('auth')->group(function () {

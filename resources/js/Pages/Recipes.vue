@@ -7,7 +7,7 @@ import Layout from "@/Layouts/Layout.vue";
 import {Head} from "@inertiajs/vue3";
 
 
-const data = ref(ls.get('recipes'));
+const data = ref(ls.get('recipes2'));
 
 async function fetchData() {
     if (data.value != null) return;
@@ -18,12 +18,11 @@ async function fetchData() {
 
     if (response.status == 200) {
         data.value = await response.data.recipes;
-        ls.set('recipes', data.value);
+        ls.set('recipes2', data.value);
     }
 }
 
 onMounted(fetchData)
-
 </script>
 
 <template>

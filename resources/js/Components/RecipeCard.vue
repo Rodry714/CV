@@ -4,7 +4,8 @@ import {Link} from "@inertiajs/vue3";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 const props = defineProps({
-    recipe: Object
+    recipe: Object,
+    daily: Boolean
 })
 
 </script>
@@ -12,7 +13,7 @@ const props = defineProps({
 <template>
 
     <div class="flex flex-col w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto">
-        <a href="#">
+        <a v-if="recipe.image" href="#">
             <img class="rounded-t-lg" :src="recipe.image" alt="recipe image"/>
         </a>
 
@@ -36,8 +37,8 @@ const props = defineProps({
                 <span class=" font-bold text-gray-600">Servings {{ recipe.servings }}</span>
 
                 <PrimaryButton>
-                    <Link :href="route('recipe', {recipe: recipe.id})">Cook
-                        it!
+                    <Link :href="route('recipe', {recipe: recipe.id, daily: daily})">
+                        Cook it!
                     </Link>
                 </PrimaryButton>
             </div>
